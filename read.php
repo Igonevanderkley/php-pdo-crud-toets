@@ -59,7 +59,7 @@ foreach ($result as $info) {
 
 <body>
 
-    <h1>De vijf rijkste mensen ter wereld</h1>
+    <h1>De vijf duurste auto's ter wereld</h1>
     <br>
     <br>
     <table border='1'>
