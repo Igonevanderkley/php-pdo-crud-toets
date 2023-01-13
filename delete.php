@@ -1,7 +1,8 @@
 <?php 
+//configuratie gegevens toevoegen
 require 'config.php';
 
-$dsn = "mysql:dbhost=$dbHost;dbname=$dbName;charset=UTF8";
+$dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
 
 try {
     $pdo = new PDO($dsn, $dbUser, $dbPass);
@@ -15,13 +16,16 @@ try {
     $e->getMessage();
 }
 
+//De delete query
 $sql = "DELETE FROM DureAuto
         WHERE Id = :Id";
 
+//voorbereiden
 $statement = $pdo->prepare($sql);
 
 $statement->bindValue(':Id', $_GET['Id'], PDO::PARAM_INT);
 
+//executeren
 $result = $statement->execute();
 
 if ($result) {
