@@ -1,6 +1,7 @@
 <?php
-
+//configuratie gegevens toevoegen
 require 'config.php';
+
 $dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
 
 try {
@@ -15,17 +16,19 @@ try {
     echo $e->$getMessage();
 }
 
-//haal gegevens uit de database
+//de gegevens ophalen uit de database
 $sql = "SELECT * FROM DureAuto
 ORDER BY Prijs desc";
 
+//voorbereiden
 $statement = $pdo->prepare($sql);
 
+//executeren
 $statement->execute();
 
+// het resultaat in een array zetten
 $result = $statement->fetchAll(PDO::FETCH_OBJ);
-//ff checken
-//var_dump($result);
+
 
 
 $rows = "";
