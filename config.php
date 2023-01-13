@@ -1,4 +1,5 @@
 <?php
+//configuratie data
 $dbHost = 'localhost';
 $dbName = 'php-pdo-crud-toets';
 $dbUser = 'IK_2209C';
